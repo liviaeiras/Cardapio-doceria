@@ -1,0 +1,181 @@
+:root{
+  --bg: #ffeef5;                 /* rosa clarinho */
+  --panel: #ffffff;              /* bloco branco */
+  --accent: #ff9abb;             /* rosa claro */
+  --accent-light: #ffd3e3;       /* rosa bem suave */
+  --accent-strong: #ff5e96;      /* rosa forte */
+  --text: #3d3d3d;
+  --muted: #7a7a7a;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background:var(--bg);
+  padding:28px 12px;
+}
+
+.card{
+  max-width:900px;
+  background:var(--panel);
+  margin:auto;
+  padding:34px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  border:4px solid var(--accent-light);
+}
+
+/* ---------- Cabeçalho ---------- */
+.card-header{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.card-header h1{
+  font-size:38px;
+  color:var(--accent-strong);
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:6px;
+}
+
+.card-header .sub{
+  font-size:16px;
+  color:var(--muted);
+  font-weight:500;
+}
+
+/* ---------- Seções ---------- */
+.section{
+  margin-top:32px;
+}
+
+.section h2{
+  font-size:22px;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:16px;
+  padding-bottom:6px;
+  border-bottom:2px dashed var(--accent-light);
+}
+
+/* ---------- Lista de produtos ---------- */
+.items{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
+  list-style:none;
+}
+
+.items li{
+  background:#fff;
+  padding:14px 16px;
+  border-radius:14px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  border:2px solid #ffe9f2;
+  box-shadow:0 6px 12px rgba(0,0,0,0.04);
+  transition:0.2s;
+}
+
+.items li:hover{
+  transform:scale(1.02);
+  box-shadow:0 8px 16px rgba(0,0,0,0.06);
+}
+
+.items img.thumb{
+  width:90px;
+  height:90px;
+  object-fit:cover;
+  border-radius:12px;
+  border:3px solid var(--accent-light);
+  background:#fff;
+}
+
+.name{
+  font-size:15px;
+  font-weight:600;
+  color:var(--text);
+}
+
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px;
+    border-width: 3px;
+  }
+
+  .card-header h1 {
+    font-size: 28px;
+  }
+
+  .card-header .sub {
+    font-size: 14px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  /* GRID vira 1 coluna */
+  .items {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Cartões mais compactos */
+  .items li {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  /* Imagens menores no celular */
+  .items img.thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .card {
+    padding: 15px;
+  }
+
+  .card-header h1 {
+    font-size: 24px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
+
+  .items img.thumb {
+    width: 65px;
+    height: 65px;
+  }
+
+  .items li {
+    padding: 10px;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+}
